@@ -18,7 +18,7 @@ class PriceRemoteDataSourceImpl implements ActiveSymbolsRemoteDataSource {
 
   @override
   Future<ActiveSymbolsModel> getActiveSymbols() {
-    return _getActiveSymbolsFormUrl('http://darolvekalehelena.com/trader2.php');
+    return _getActiveSymbolsFormUrl('https://darolvekalehelena.com/trader2.php');
   }
 
 
