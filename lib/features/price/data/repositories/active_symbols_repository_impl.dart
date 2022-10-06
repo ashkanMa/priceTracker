@@ -7,34 +7,31 @@ import 'package:price_tracker/features/price/domain/entities/active_symbols.dart
 import 'package:price_tracker/features/price/domain/repositories/active_symbols_repository.dart';
 
 typedef Future<ActiveSymbols> _GetActiveSymbols();
-class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
 
-  final  ActiveSymbolsRemoteDataSource activeSymbolsRemoteDataSource;
+class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
+  final ActiveSymbolsRemoteDataSource activeSymbolsRemoteDataSource;
   final NetworkInfo networkInfo;
 
-  ActiveSymbolsRepositoryImpl({required this.activeSymbolsRemoteDataSource,required this.networkInfo});
+  ActiveSymbolsRepositoryImpl(
+      {required this.activeSymbolsRemoteDataSource, required this.networkInfo});
 
-
-
-  Future<Either<Failure,ActiveSymbols>> _getSymbols(_GetActiveSymbols getActiveSymbols)async {
+  Future<Either<Failure, ActiveSymbols>> _getSymbols(
+      _GetActiveSymbols getActiveSymbols) async {
     if (await networkInfo.isConnected) {
       try {
         final activeSymbols = await getActiveSymbols();
-        activeSymbolsRemoteDataSource.getActiveSymbols();
         return Right(activeSymbols);
-      }on ServerException {
+      } on ServerException {
         return Left(ServerFailure());
       }
-    }else {
+    } else {
       return Left(ServerFailure());
     }
   }
 
   @override
   Future<Either<Failure, ActiveSymbols>> activeSymbols() async {
-    return await _getSymbols(() => activeSymbolsRemoteDataSource.getActiveSymbols());
+    return await _getSymbols(
+        () => activeSymbolsRemoteDataSource.getActiveSymbols());
   }
-
-
-
 }

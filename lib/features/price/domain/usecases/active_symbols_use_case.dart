@@ -7,12 +7,12 @@ import 'package:price_tracker/features/price/domain/repositories/active_symbols_
 
 class ActiveSymbolsUseCase extends UseCase<ActiveSymbols,ActiveSymbolsParams> {
 
-  final ActiveSymbolsRepository _repository;
+  final ActiveSymbolsRepository repository;
 
-  ActiveSymbolsUseCase(this._repository);
+  ActiveSymbolsUseCase({required this.repository});
   @override
   Future<Either<Failure, ActiveSymbols>> call(ActiveSymbolsParams params) async {
-    final result = await _repository.activeSymbols();
+    final result = await repository.activeSymbols();
     return result;
   }
 

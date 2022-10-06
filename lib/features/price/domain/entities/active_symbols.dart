@@ -1,49 +1,53 @@
-import 'package:equatable/equatable.dart';
 
-class ActiveSymbols extends Equatable {
 
-  int? allowForwardStarting;
-  String? displayName;
-  int? exchangeIsOpen;
-  int? isTradingSuspended;
-  String? market;
-  String? marketDisplayName;
-  double? pip;
-  String? subMarket;
-  String? subMarketDisplayName;
-  String? symbol;
-  String? symbolType;
-
+class ActiveSymbols {
   ActiveSymbols({
-      this.allowForwardStarting, 
-      this.displayName, 
-      this.exchangeIsOpen, 
-      this.isTradingSuspended, 
-      this.market, 
-      this.marketDisplayName, 
-      this.pip, 
-      this.subMarket,
-      this.subMarketDisplayName,
-      this.symbol, 
-      this.symbolType,});
+    required this.activeSymbols,
+    required this.msgType,
+  });
 
-  @override
+  List<ActiveSymbol> activeSymbols;
+  String msgType;
+}
 
-  List<Object?> get props => [
-    allowForwardStarting,
-    displayName,
-    exchangeIsOpen,
-    isTradingSuspended,
-    market,
-    marketDisplayName,
-    pip,
-    subMarket,
-    subMarketDisplayName,
-    symbol,
-    symbolType
-  ];
+class ActiveSymbol {
+  ActiveSymbol({
+    required this.allowForwardStarting,
+    required this.displayName,
+    required this.exchangeIsOpen,
+    required this.isTradingSuspended,
+    required this.market,
+    required this.marketDisplayName,
+    required this.pip,
+    required this.submarket,
+    required this.submarketDisplayName,
+    required this.symbol,
+    required this.symbolType,
+  });
 
+  int allowForwardStarting;
+  String displayName;
+  int exchangeIsOpen;
+  int isTradingSuspended;
+  String market;
+  String marketDisplayName;
+  double pip;
+  String submarket;
+  String submarketDisplayName;
+  String symbol;
+  String symbolType;
 
-
-
+  factory ActiveSymbol.fromJson(Map<String, dynamic> json) => ActiveSymbol(
+        allowForwardStarting: json["allow_forward_starting"],
+        displayName: json["display_name"],
+        exchangeIsOpen: json["exchange_is_open"],
+        isTradingSuspended: json["is_trading_suspended"],
+        market: json["market"],
+        marketDisplayName: json["market_display_name"],
+        pip: json["pip"].toDouble(),
+        submarket: json["submarket"],
+        submarketDisplayName: json["submarket_display_name"],
+        symbol: json["symbol"],
+        symbolType: json["symbol_type"],
+      );
 }

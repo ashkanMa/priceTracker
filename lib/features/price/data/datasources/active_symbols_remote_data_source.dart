@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
-
-import 'package:price_tracker/core/error/exceptions.dart';
-import 'package:price_tracker/features/price/data/models/active_symbols_model.dart';
-import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
+import 'package:price_tracker/core/error/exceptions.dart';
+import 'package:price_tracker/features/price/data/models/active_symbols_model.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 abstract class ActiveSymbolsRemoteDataSource {
 
@@ -24,13 +22,17 @@ class PriceRemoteDataSourceImpl implements ActiveSymbolsRemoteDataSource {
 
   Future<ActiveSymbolsModel> _getActiveSymbolsFormUrl(String url) async {
     final response =await http.post(Uri.parse(url));
-
+    await Future.delayed(const Duration(seconds: 2));
     if (response.statusCode == 200) {
-      return ActiveSymbolsModel.fromJson(json.decode(response.body));
+      return ActiveSymbolsModel.fromJson(json.decode(await getJson()));
     }else {
       throw ServerException();
     }
 
+  }
+
+  Future<String> getJson() {
+    return rootBundle.loadString('assets/data/markets.json');
   }
   
 }
