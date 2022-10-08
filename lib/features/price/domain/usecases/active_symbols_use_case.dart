@@ -15,7 +15,6 @@ class ActiveSymbolsUseCase extends UseCase<ActiveSymbols,ActiveSymbolsParams> {
     final result = await repository.activeSymbols();
     return result;
   }
-
 }
 
 

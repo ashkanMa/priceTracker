@@ -7,7 +7,6 @@ enum LoadingType {
   mainLoading,
   trackerLoading,
 }
-
 class LoadingWidget extends StatelessWidget {
   final LoadingType loadingType;
 
@@ -29,3 +28,4 @@ class LoadingWidget extends StatelessWidget {
     );
   }
 }
+

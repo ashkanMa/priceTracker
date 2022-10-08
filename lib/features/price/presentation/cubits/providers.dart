@@ -5,6 +5,7 @@ import 'package:price_tracker/features/price/data/datasources/active_symbols_rem
 import 'package:price_tracker/features/price/data/repositories/active_symbols_repository_impl.dart';
 import 'package:price_tracker/features/price/domain/usecases/active_symbols_use_case.dart';
 import 'package:price_tracker/features/price/presentation/cubits/price_tracker_cubit/price_tracker_cubit.dart';
+import 'package:price_tracker/features/price/presentation/cubits/socket_cubit/socket_cubit.dart';
 
 class BlocProviders {
   static final List<BlocProvider> providers = [
@@ -14,6 +15,9 @@ class BlocProviders {
                 repository: ActiveSymbolsRepositoryImpl(
                     activeSymbolsRemoteDataSource: PriceRemoteDataSourceImpl(),
                     networkInfo: NetworkInfoImpl(Connectivity()))))),
+
+    BlocProvider<SocketCubit>(
+        create: (context) => SocketCubit()),
     // .
     // .
     // .

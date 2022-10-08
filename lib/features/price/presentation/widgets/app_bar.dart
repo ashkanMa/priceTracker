@@ -8,6 +8,7 @@ class AppBarWidget extends StatelessWidget  with PreferredSizeWidget{
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text(StringConstants.appTitle),
+      centerTitle: true,
     );
   }
 

@@ -1,5 +1,3 @@
-
-
 class ActiveSymbols {
   ActiveSymbols({
     required this.activeSymbols,
