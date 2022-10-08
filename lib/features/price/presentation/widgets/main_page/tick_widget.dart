@@ -1,4 +1,3 @@
-
 import 'package:price_tracker/core/helper/exporties.dart';
 
 class TickWidget extends StatelessWidget {
@@ -13,6 +12,7 @@ class TickWidget extends StatelessWidget {
         return const LoadingWidget(loadingType: LoadingType.trackerLoading);
       }
       if (state is SocketConnectedState) {
+        preValue = null;
         return streaming(state);
       }
       return Container();
@@ -26,7 +26,7 @@ class TickWidget extends StatelessWidget {
           if (snapshot.hasData) {
             try {
               var model =
-              TickEntity.fromJson(json.decode(snapshot.data.toString()));
+                  TickEntity.fromJson(json.decode(snapshot.data.toString()));
               double value = double.parse(model.tick.quote.toString());
               return changeData(value);
             } catch (e) {
@@ -35,7 +35,7 @@ class TickWidget extends StatelessWidget {
               );
             }
           }
-          return const Text(StringConstants.waiting);
+          return const LoadingWidget(loadingType: LoadingType.trackerLoading);
         });
   }
 

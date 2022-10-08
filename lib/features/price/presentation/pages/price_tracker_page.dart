@@ -24,8 +24,8 @@ class PriceTrackerPage extends StatelessWidget {
                   assetList: state.activeSymbolsList,
                   dropDownValue: state.assetName,
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 8,
                 ),
                 TickWidget()
               ],
