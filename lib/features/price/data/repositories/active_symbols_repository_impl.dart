@@ -1,10 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:price_tracker/core/error/exceptions.dart';
-import 'package:price_tracker/core/error/failure.dart';
-import 'package:price_tracker/core/network/netwrok_info.dart';
-import 'package:price_tracker/features/price/data/datasources/active_symbols_remote_data_source.dart';
-import 'package:price_tracker/features/price/domain/entities/active_symbols.dart';
-import 'package:price_tracker/features/price/domain/repositories/active_symbols_repository.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 typedef Future<ActiveSymbols> _GetActiveSymbols();
 

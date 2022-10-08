@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 abstract class Failure extends Equatable {
   String message;

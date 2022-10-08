@@ -1,4 +1,4 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 abstract class NetworkInfo {
   Future<bool> get isConnected;

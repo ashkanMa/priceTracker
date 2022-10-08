@@ -1,8 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-import 'package:price_tracker/features/price/domain/entities/active_symbols.dart';
-import 'package:price_tracker/features/price/domain/usecases/active_symbols_use_case.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 part 'price_tracker_state.dart';
 class PriceTrackerCubit extends Cubit<PriceTrackerState> {
   PriceTrackerCubit({required this.activeSymbolsUseCase})
@@ -20,7 +16,6 @@ class PriceTrackerCubit extends Cubit<PriceTrackerState> {
         for (var element in totalActiveSymbolsList) {
           marketsNameSet.add(element.marketDisplayName);
         }
-        print(marketsNameSet.toList());
         emit(PriceTrackerMarketsLoadedState(
             activeSymbolsList: [],
             marketsList: marketsNameSet.toList(),

@@ -1,12 +1,5 @@
-import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:price_tracker/core/helper/string_const.dart';
-import 'package:price_tracker/features/price/data/models/tick_model.dart';
-import 'package:price_tracker/features/price/presentation/cubits/socket_cubit/socket_cubit.dart';
-import 'package:price_tracker/features/price/presentation/widgets/loading.dart';
-import 'package:price_tracker/features/price/presentation/widgets/ui_exception_widget.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 class TickWidget extends StatelessWidget {
   TickWidget({Key? key}) : super(key: key);
@@ -33,7 +26,7 @@ class TickWidget extends StatelessWidget {
           if (snapshot.hasData) {
             try {
               var model =
-                  TickModel.fromJson(json.decode(snapshot.data.toString()));
+              TickEntity.fromJson(json.decode(snapshot.data.toString()));
               double value = double.parse(model.tick.quote.toString());
               return changeData(value);
             } catch (e) {

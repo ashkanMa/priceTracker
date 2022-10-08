@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
-
-import '../error/failure.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 abstract class UseCase<Type, Params> {
   Future<Either<Failure, Type>> call(Params params);
@@ -9,7 +7,7 @@ abstract class UseCase<Type, Params> {
 
 class NoParams extends Equatable {
   const NoParams();
+
   @override
   List<Object> get props => [];
 }
-

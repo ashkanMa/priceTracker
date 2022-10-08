@@ -1,6 +1,5 @@
-import 'dart:convert';
 
-import 'package:price_tracker/features/price/domain/entities/active_symbols.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 ActiveSymbolsModel activeSymbolsFromJson(String str) =>
     ActiveSymbolsModel.fromJson(json.decode(str));

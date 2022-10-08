@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-
+import 'package:price_tracker/core/helper/exporties.dart';
 
 class UiExceptionWidget extends StatelessWidget {
   const UiExceptionWidget({Key? key, required this.text}) : super(key: key);
@@ -13,12 +12,15 @@ class UiExceptionWidget extends StatelessWidget {
         child: Container(
           height: 100,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.amber[200]
-          ),
-          child: Center(child: Padding(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.amber[200]),
+          child: Center(
+              child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(text,style: const TextStyle(fontSize: 16),),
+            child: Text(
+              text,
+              style: const TextStyle(fontSize: 16),
+            ),
           )),
         ),
       ),

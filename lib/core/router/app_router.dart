@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:price_tracker/core/helper/string_const.dart';
-import 'package:price_tracker/features/price/presentation/pages/price_tracker_page.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {

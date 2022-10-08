@@ -23,19 +23,3 @@ class PriceTrackerMarketsLoadedState extends PriceTrackerState {
   @override
   List<Object> get props => [activeSymbolsList, marketsList];
 }
-
-// class MarketChangeState extends PriceTrackerState {
-//   final List<ActiveSymbol> activeSymbolsList;
-//   final List<String> marketsList;
-//   final String marketName;
-//   final String assetName;
-//
-//   MarketChangeState(
-//       {required this.activeSymbolsList,
-//         required this.marketsList,
-//         required this.marketName,
-//         required this.assetName});
-//
-//   @override
-//   List<Object> get props => [activeSymbolsList, marketsList];
-// }

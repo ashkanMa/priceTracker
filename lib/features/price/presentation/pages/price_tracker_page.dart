@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:price_tracker/core/helper/string_const.dart';
-import 'package:price_tracker/features/price/presentation/cubits/price_tracker_cubit/price_tracker_cubit.dart';
-import 'package:price_tracker/features/price/presentation/widgets/app_bar.dart';
-import 'package:price_tracker/features/price/presentation/widgets/asset_drop_down.dart';
-import 'package:price_tracker/features/price/presentation/widgets/loading.dart';
-import 'package:price_tracker/features/price/presentation/widgets/tick_widget.dart';
-
-import '../widgets/markets_drop_down.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 class PriceTrackerPage extends StatelessWidget {
   const PriceTrackerPage({Key? key}) : super(key: key);
@@ -33,8 +24,10 @@ class PriceTrackerPage extends StatelessWidget {
                   assetList: state.activeSymbolsList,
                   dropDownValue: state.assetName,
                 ),
-                const SizedBox(height: 50,),
-                 TickWidget()
+                const SizedBox(
+                  height: 50,
+                ),
+                TickWidget()
               ],
             ));
       }
@@ -47,5 +40,4 @@ class PriceTrackerPage extends StatelessWidget {
       );
     });
   }
-
 }

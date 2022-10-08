@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:price_tracker/core/helper/string_const.dart';
+
+import 'package:price_tracker/core/helper/exporties.dart';
 
 class AppBarWidget extends StatelessWidget  with PreferredSizeWidget{
   const AppBarWidget({Key? key}) : super(key: key);

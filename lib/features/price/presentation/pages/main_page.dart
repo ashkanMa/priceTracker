@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:price_tracker/core/helper/string_const.dart';
-import 'package:price_tracker/core/router/app_router.dart';
-import 'package:price_tracker/features/price/presentation/cubits/providers.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

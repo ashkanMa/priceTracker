@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 TickEntity tickModelFromJson(String str) =>
     TickEntity.fromJson(json.decode(str));

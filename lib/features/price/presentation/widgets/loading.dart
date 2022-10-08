@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-import '../../../../core/helper/numbers_const.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 enum LoadingType {
   mainLoading,
   trackerLoading,
 }
+
 class LoadingWidget extends StatelessWidget {
   final LoadingType loadingType;
 
@@ -28,4 +26,3 @@ class LoadingWidget extends StatelessWidget {
     );
   }
 }
-

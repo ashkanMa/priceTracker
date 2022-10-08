@@ -1,9 +1,7 @@
-import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
-import 'package:price_tracker/core/error/exceptions.dart';
-import 'package:price_tracker/features/price/data/models/active_symbols_model.dart';
+import 'package:price_tracker/core/helper/exporties.dart';
 
 abstract class ActiveSymbolsRemoteDataSource {
   Future<ActiveSymbolsModel> getActiveSymbols();
@@ -20,7 +18,7 @@ class PriceRemoteDataSourceImpl implements ActiveSymbolsRemoteDataSource {
     final response = await http.post(Uri.parse(url));
     await Future.delayed(const Duration(seconds: 2));
     return ActiveSymbolsModel.fromJson(json.decode(await getJson()));
-    if (response.statusCode == 200 || response.statusCode != 200) {
+    if (response.statusCode == 200 ) {
       return ActiveSymbolsModel.fromJson(json.decode(await getJson()));
     } else {
       throw ServerException();
@@ -28,6 +26,6 @@ class PriceRemoteDataSourceImpl implements ActiveSymbolsRemoteDataSource {
   }
 
   Future<String> getJson() {
-    return rootBundle.loadString('assets/data/markets.json');
+    return rootBundle.loadString(StringConstants.activeSymbolSimulatedUrl);
   }
 }
