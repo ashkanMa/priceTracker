@@ -1,12 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:price_tracker/core/helper/exporties.dart';
 
 class MockActiveSymbolsUseCase extends Mock implements ActiveSymbolsUseCase {}
 
 void main() {
-  late PriceTrackerCubit priceTrackerCubit;
   late MockActiveSymbolsUseCase mockActiveSymbolsUseCase;
   ActiveSymbolsParams params = const ActiveSymbolsParams();
   List<ActiveSymbol> totalActiveSymbolsList = [];
@@ -14,8 +11,6 @@ void main() {
       ActiveSymbolsEntity(msgType: '', activeSymbols: totalActiveSymbolsList);
   setUp(() {
     mockActiveSymbolsUseCase = MockActiveSymbolsUseCase();
-    priceTrackerCubit =
-        PriceTrackerCubit(activeSymbolsUseCase: mockActiveSymbolsUseCase);
   });
   List<BlocProvider> providers = [
     BlocProvider<PriceTrackerCubit>(
@@ -46,10 +41,11 @@ void main() {
         .thenAnswer((_) async => Right(activeSymbols));
     await tester.pumpWidget(widgetUnderTest());
     await tester
-        .pump(const Duration(seconds: 3)); // until this duration find indicator
+        .pump(const Duration(seconds: 2)); // until this duration find indicator
     expect(find.byKey(const Key(StringConstants.appBarKey)), findsOneWidget);
     expect(find.byType(Column), findsOneWidget);
+    expect(find.byType(MarketDropDown), findsOneWidget);
+    expect(find.byType(AssetDropDownWidget), findsOneWidget);
     expect(find.byType(TickWidget), findsOneWidget);
   });
 }
-

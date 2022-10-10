@@ -1,8 +1,7 @@
-import 'package:mocktail/mocktail.dart';
 import 'package:price_tracker/core/helper/exporties.dart';
-import 'package:flutter_test/flutter_test.dart';
 
-class MockActiveSymbolsRemoteDataSource extends Mock implements ActiveSymbolsRemoteDataSource {}
+class MockActiveSymbolsRemoteDataSource extends Mock
+    implements ActiveSymbolsRemoteDataSource {}
 
 void main() {
   late MockActiveSymbolsRemoteDataSource sut;

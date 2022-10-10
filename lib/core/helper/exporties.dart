@@ -42,3 +42,11 @@ export 'package:price_tracker/features/price/presentation/widgets/main_page/tick
 export 'package:price_tracker/features/price/presentation/widgets/ui_exception_widget.dart';
 export 'package:price_tracker/features/price/presentation/pages/price_tracker_page.dart';
 export 'package:price_tracker/features/price/presentation/pages/main_page.dart';
+
+
+//test
+export 'package:flutter_test/flutter_test.dart';
+export 'package:mocktail/mocktail.dart';
+export 'package:bloc_test/bloc_test.dart';
+
+
