@@ -1,12 +1,12 @@
-
 import 'package:price_tracker/core/helper/exporties.dart';
 
-class AppBarWidget extends StatelessWidget  with PreferredSizeWidget{
+class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   const AppBarWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      key: const Key(StringConstants.appBarKey),
       title: const Text(StringConstants.appTitle),
       centerTitle: true,
     );

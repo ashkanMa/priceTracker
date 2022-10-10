@@ -13,6 +13,7 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpinKitFadingCircle(
+      key: const Key(StringConstants.loading),
       size: loadingType == LoadingType.mainLoading
           ? NumberConstants.firstLoadingSize
           : NumberConstants.trackerLoadingSize,

@@ -12,6 +12,7 @@ class PriceTrackerPage extends StatelessWidget {
         builder: (context, state) {
       if (state is PriceTrackerMarketsLoadedState) {
         return Scaffold(
+            key: const Key(StringConstants.mainPageScaffoldKey),
             appBar: const AppBarWidget(),
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

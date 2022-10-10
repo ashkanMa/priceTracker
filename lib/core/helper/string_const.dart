@@ -13,4 +13,10 @@ class StringConstants {
   static const socketUrl = "wss://ws.binaryws.com/websockets/v3?app_id=1089";
   static const activeSymbolSimulatedUrl = "assets/data/markets.json";
 
+
+  ///keys
+  static const appBarKey="appBarKey";
+  static const loading="loading";
+  static const mainPageScaffoldKey="mainPageScaffoldKey";
+
 }
