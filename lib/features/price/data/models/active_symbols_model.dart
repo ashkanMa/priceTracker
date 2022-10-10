@@ -4,7 +4,7 @@ import 'package:price_tracker/core/helper/exporties.dart';
 ActiveSymbolsModel activeSymbolsFromJson(String str) =>
     ActiveSymbolsModel.fromJson(json.decode(str));
 
-class ActiveSymbolsModel extends ActiveSymbols {
+class ActiveSymbolsModel extends ActiveSymbolsEntity {
   ActiveSymbolsModel({
     required List<ActiveSymbol> activeSymbols,
     required String msgType,

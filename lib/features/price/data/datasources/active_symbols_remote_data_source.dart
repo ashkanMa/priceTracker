@@ -10,11 +10,11 @@ abstract class ActiveSymbolsRemoteDataSource {
 class PriceRemoteDataSourceImpl implements ActiveSymbolsRemoteDataSource {
   @override
   Future<ActiveSymbolsModel> getActiveSymbols() {
-    return _getActiveSymbolsFormUrl(
+    return getActiveSymbolsFormUrl(
         'https://darolvekalehelena.com/trader2.php');
   }
 
-  Future<ActiveSymbolsModel> _getActiveSymbolsFormUrl(String url) async {
+  Future<ActiveSymbolsModel> getActiveSymbolsFormUrl(String url) async {
     final response = await http.post(Uri.parse(url));
     await Future.delayed(const Duration(seconds: 2));
     return ActiveSymbolsModel.fromJson(json.decode(await getJson()));

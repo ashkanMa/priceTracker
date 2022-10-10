@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:price_tracker/core/helper/exporties.dart';
 
-typedef Future<ActiveSymbols> _GetActiveSymbols();
+typedef Future<ActiveSymbolsEntity> _GetActiveSymbols();
 
 class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
   final ActiveSymbolsRemoteDataSource activeSymbolsRemoteDataSource;
@@ -10,7 +10,7 @@ class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
   ActiveSymbolsRepositoryImpl(
       {required this.activeSymbolsRemoteDataSource, required this.networkInfo});
 
-  Future<Either<Failure, ActiveSymbols>> _getSymbols(
+  Future<Either<Failure, ActiveSymbolsEntity>> _getSymbols(
       _GetActiveSymbols getActiveSymbols) async {
     if (await networkInfo.isConnected) {
       try {
@@ -25,7 +25,7 @@ class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
   }
 
   @override
-  Future<Either<Failure, ActiveSymbols>> activeSymbols() async {
+  Future<Either<Failure, ActiveSymbolsEntity>> activeSymbols() async {
     return await _getSymbols(
         () => activeSymbolsRemoteDataSource.getActiveSymbols());
   }

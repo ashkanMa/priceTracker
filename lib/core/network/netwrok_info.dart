@@ -24,3 +24,4 @@ class NetworkInfoImpl implements NetworkInfo {
   Future<ConnectivityResult> get networkType =>
       Connectivity().checkConnectivity();
 }
+

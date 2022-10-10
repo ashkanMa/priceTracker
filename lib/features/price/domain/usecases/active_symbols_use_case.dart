@@ -2,13 +2,13 @@ import 'package:dartz/dartz.dart';
 
 import 'package:price_tracker/core/helper/exporties.dart';
 
-class ActiveSymbolsUseCase extends UseCase<ActiveSymbols, ActiveSymbolsParams> {
+class ActiveSymbolsUseCase extends UseCase<ActiveSymbolsEntity, ActiveSymbolsParams> {
   final ActiveSymbolsRepository repository;
 
   ActiveSymbolsUseCase({required this.repository});
 
   @override
-  Future<Either<Failure, ActiveSymbols>> call(
+  Future<Either<Failure, ActiveSymbolsEntity>> call(
       ActiveSymbolsParams params) async {
     final result = await repository.activeSymbols();
     return result;

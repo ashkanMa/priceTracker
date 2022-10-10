@@ -9,7 +9,6 @@ export 'package:equatable/equatable.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:flutter_spinkit/flutter_spinkit.dart';
-export 'package:connectivity_plus/connectivity_plus.dart';
 
 //core
 export 'package:price_tracker/core/helper/string_const.dart';
@@ -26,7 +25,7 @@ export 'package:price_tracker/features/price/data/repositories/active_symbols_re
 export 'package:price_tracker/features/price/data/models/active_symbols_model.dart';
 
 //domain
-export 'package:price_tracker/features/price/domain/entities/active_symbols.dart';
+export 'package:price_tracker/features/price/domain/entities/active_symbols_entity.dart';
 export 'package:price_tracker/features/price/domain/usecases/active_symbols_use_case.dart';
 export 'package:price_tracker/features/price/domain/repositories/active_symbols_repository.dart';
 export 'package:price_tracker/features/price/domain/entities/tick_entity.dart';

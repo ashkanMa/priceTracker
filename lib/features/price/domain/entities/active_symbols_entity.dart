@@ -1,5 +1,5 @@
-class ActiveSymbols {
-  ActiveSymbols({
+class ActiveSymbolsEntity {
+  ActiveSymbolsEntity({
     required this.activeSymbols,
     required this.msgType,
   });

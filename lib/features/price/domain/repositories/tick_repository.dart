@@ -3,5 +3,5 @@ import 'package:price_tracker/core/helper/exporties.dart';
 
 
 abstract class TickRepository {
-  Future<Either<Failure, ActiveSymbols>> ticks();
+  Future<Either<Failure, ActiveSymbolsEntity>> ticks();
 }
