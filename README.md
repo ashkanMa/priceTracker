@@ -1,16 +1,10 @@
 # price_tracker
 
-A new Flutter project.
+project Structure :
+    -this project developed by clean architecture
+project TDD :
+    - Unit testing => in test directory
+    - Widget testing=> in test directory
+    - Integration test => in integration_test directory 
+    - Automation test and CI/CD with github-actions => github directory
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
