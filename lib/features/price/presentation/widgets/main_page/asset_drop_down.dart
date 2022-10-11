@@ -68,7 +68,7 @@ class AssetDropDownWidget extends StatelessWidget {
                     ),
                   ),
                   onChanged: (value) {},
-                  items: []),
+                  items: const []),
             ),
           );
   }

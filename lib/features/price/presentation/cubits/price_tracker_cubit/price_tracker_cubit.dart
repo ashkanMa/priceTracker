@@ -17,7 +17,7 @@ class PriceTrackerCubit extends Cubit<PriceTrackerState> {
           marketsNameSet.add(element.marketDisplayName);
         }
         emit(PriceTrackerMarketsLoadedState(
-            activeSymbolsList: [],
+            activeSymbolsList: const [],
             marketsList: marketsNameSet.toList(),
             marketName: marketName,
             assetName: assetName));

@@ -1,5 +1,4 @@
 import 'package:price_tracker/core/helper/exporties.dart';
-import 'package:http/http.dart' as http;
 
 class BlocProviders {
   static final List<BlocProvider> providers = [

@@ -1,5 +1,3 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:price_tracker/core/helper/exporties.dart';
 
 class MockDataConnectionChecker extends Mock implements Connectivity {}

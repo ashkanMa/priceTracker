@@ -2,7 +2,7 @@ import 'package:price_tracker/core/helper/exporties.dart';
 
 class TickWidget extends StatelessWidget {
   TickWidget({Key? key}) : super(key: key);
-  var currentValue = 0.0;
+  double currentValue = 0.0;
   var preValue;
 
   @override

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:price_tracker/core/helper/exporties.dart';
 
-typedef Future<ActiveSymbolsEntity> _GetActiveSymbols();
+typedef _GetActiveSymbols = Future<ActiveSymbolsEntity> Function();
 
 class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
   final ActiveSymbolsRemoteDataSource activeSymbolsRemoteDataSource;
@@ -17,10 +17,10 @@ class ActiveSymbolsRepositoryImpl extends ActiveSymbolsRepository {
         final activeSymbols = await getActiveSymbols();
         return Right(activeSymbols);
       } on ServerException {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
     } else {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
