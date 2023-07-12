@@ -5,7 +5,6 @@ export 'package:bloc/bloc.dart';
 export 'package:equatable/equatable.dart';
 export 'package:meta/meta.dart';
 export 'package:flutter/material.dart';
-export 'package:equatable/equatable.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:flutter_spinkit/flutter_spinkit.dart';

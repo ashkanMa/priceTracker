@@ -30,7 +30,7 @@ void main() {
         .thenAnswer((_) => Future.value(activeSymbols));
   }
 
-  group('getRandomNumberTrivia', () {
+  group('check system is online', () {
     test(
       'should check if the device is online',
       () async {
